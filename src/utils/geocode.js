@@ -3,7 +3,7 @@ const request = require('postman-request')
 const geoCode = (address, callback) => {
     //const url = 'https://api.mapbox.com/geocoding/v5/mapbox.places/' + address + '.json?access_token=pk.eyJ1Ijoic2FsbWFuMTUwMzkyIiwiYSI6ImNsbnI1OWYwcDE2NXkycnFpejdxZHRoNm4ifQ.a5Cj1iGRaRhulpWrK6GXMA&limit=1'
     const url = 'https://api.mapbox.com/geocoding/v5/mapbox.places/' + encodeURIComponent(address)  + '.json?access_token=pk.eyJ1Ijoic2FsbWFuMTUwMzkyIiwiYSI6ImNsbnI1OWYwcDE2NXkycnFpejdxZHRoNm4ifQ.a5Cj1iGRaRhulpWrK6GXMA&limit=1'
-    console.log(url)
+    //console.log(url)
     request({url, json: true}, (error, {body} = {}) => {
         if(error) {
             callback('Unable to connect to location service', undefined)
